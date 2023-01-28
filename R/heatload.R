@@ -12,11 +12,12 @@
 #' @examples
 #' \dontrun{
 #' l <- 38.58
-#' a <- 92
+#' a <- 0:360
 #' s <- 12.6
 #' heatload <- thl(l, a, s, 'deg', 180)
+#' plot(A,thl(L,A,S,fold=225))
+#' points(A,thl(L,A,S,fold=225))
 #' }
-
 
 # Total potential heat load
 thl <- function(L, A, S, unit='deg', fold=180) {
