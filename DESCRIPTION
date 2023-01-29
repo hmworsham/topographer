@@ -4,7 +4,12 @@ Version: 0.0.2.0
 Authors@R: 
     person("Marshall", "Worsham", , "worsham@berkeley.edu", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0001-7924-040X"))
-Description: Topographer contains a few data manipulation functions and functions for calculating a range of topographic metrics for raster DEMs.
+Description: topographer contains data manipulation functions and functions for calculating topographic metrics for raster DEMs.
+Depends: R (>= 4.0)
+Imports:
+  terra,
+  sf,
+  dynatopmodel
 License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
     license
 Encoding: UTF-8
