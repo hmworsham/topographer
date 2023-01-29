@@ -7,7 +7,14 @@
 #' @param unit units that aspect are in, either degrees or radians
 #' @param fold angle along which aspect should be folded
 #' @return transformed aspect values
-#' @export
+#' @export facing
+#' @export eastness
+#' @export northness
+#' @export southness
+#' @export adjsouthness
+#' @export fold.aspect
+#' @export cos.aspect
+#' @export sin.aspect
 #'
 #' @examples
 #' \dontrun{

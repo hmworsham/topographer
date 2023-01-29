@@ -3,7 +3,8 @@
 #' @description calculates zonal statistics for raster inputs given an input shapefile or coordinates
 #' @param a a float angle in degrees or radians
 #' @return the angle converted into degrees or radians
-#' @export
+#' @export d2r
+#' @export r2d
 #'
 #' @examples
 #' \dontrun{
