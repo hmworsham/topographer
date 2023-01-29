@@ -11,9 +11,20 @@
 #'
 #' @examples
 #' \dontrun{
-#' d <- 25.5
-#' r <- d2r(d)
-#' d <- r2d(r)
+#' s <- 23
+#' a <- 1:360
+#' f <- 180
+#' u <- 'deg'
+#' e.facing <- eastness(s,a,u)
+#' adjs.facing <- adjsouthness(s,a,f,u)
+#' f.aspect <- fold.aspect(a, fold=215)
+#' s.aspect <- sin.aspect(a)
+#' c.aspect <- cos.aspect(a)
+#' plot(a, type='l')
+#' lines(a, e.facing, col='red')
+#' lines(a, f.aspect, col='blue')
+#' lines(a, s.aspect, col='orange')
+#' lines(a, c.aspect, col='purple')
 #' }
 
 
@@ -30,10 +41,24 @@ facing <- function(slope, aspect, focal=180, unit='rad') {
 }
 
 # Eastness, northness, southness
-eastness <- function(slope,aspect, unit='deg') facing(slope,aspect,focal=90,unit=unit)
-northness <- function(slope,aspect, unit='deg') facing(slope,aspect,focal=0,unit=unit)
-southness <- function(slope,aspect, unit='deg') facing(slope,aspect,focal=180,unit=unit)
-adjsouthness <- function(slope, aspect, unit='deg') facing(slope,aspect,focal=205, unit=unit)
+eastness <- function(slope, aspect, unit='deg') facing(slope,aspect,focal=90,unit=unit)
+northness <- function(slope, aspect, unit='deg') facing(slope,aspect,focal=0,unit=unit)
+southness <- function(slope, aspect, unit='deg') facing(slope,aspect,focal=180,unit=unit)
+adjsouthness <- function(slope, aspect, focal, unit='deg') facing(slope,aspect,focal,unit=unit)
 
 # Folded aspect
-foldaspect <- function(x, f=fold) abs(180-abs(x-f))
+fold.aspect <- function(x, fold=180) abs(180-abs(x-f))
+
+# Cosine transform aspect
+cos.aspect <- function(x) {
+  cos.asp <- cos(x)
+  names(cos.asp) <- 'usgs_cosaspect_100m'
+  return(cos.asp)
+}
+
+# Sine transform aspect
+sin.aspect <- function(x) {
+  sin.asp <- sin(x)
+  names(sin.asp) <- 'usgs_cosaspect_100m'
+  return(sin.asp)
+}
