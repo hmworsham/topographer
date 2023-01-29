@@ -24,13 +24,13 @@ thl <- function(L, A, S, unit='deg', fold=180) {
   d2r <- function(x) 2*pi*x/360
   r2d <- function(x) 360*x/(2*pi)
   if (unit=='deg') {
-    A <- foldaspect(A,fold)
+    A <- fold.aspect(A,fold)
     L <- d2r(L)
     A <- d2r(A)
     S <- d2r(S)
   } else {
     atmp <- r2d(A)
-    atmp <- foldaspect(atmp,fold)
+    atmp <- fold.aspect(atmp,fold)
     A <- d2r(atmp)
   }
   # EQN 3, McCune and Keon 2002 JVS, latitude > 30‚ slope < 60°
