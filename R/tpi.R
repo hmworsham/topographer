@@ -2,10 +2,11 @@
 #' @description Calculates topographic position using mean deviations
 #' 
 #' @param x A terra SpatRaster object
-#' @param scale focal window size (n-cell x n-cell for rectangle or distance for circle) 
+#' @param scale focal window size (n-cell x n-cell for rectangle or 
+#'  distance for circle) 
 #' @param win Window type. Options are "rectangle" and "circle" 
 #' @param normalize Apply deviation correction that normalizes to local 
-#'                       surface roughness 
+#'  surface roughness 
 #' @param zero.correct Apply correction for zero values in matrix weights      
 #' 
 #' @return A terra SpatRaster object of tpi
@@ -38,7 +39,8 @@
 #' par(opar)
 #' }
 #'
-#' @export tpi
+#' @export
+
 tpi <- function(x, scale = 3, win = "rectangle", normalize = FALSE, 
                 zero.correct = FALSE) {
   if (!inherits(x, "SpatRaster")) 
