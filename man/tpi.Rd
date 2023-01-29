@@ -9,7 +9,8 @@ tpi(x, scale = 3, win = "rectangle", normalize = FALSE, zero.correct = FALSE)
 \arguments{
 \item{x}{A terra SpatRaster object}
 
-\item{scale}{focal window size (n-cell x n-cell for rectangle or distance for circle)}
+\item{scale}{focal window size (n-cell x n-cell for rectangle or
+distance for circle)}
 
 \item{win}{Window type. Options are "rectangle" and "circle"}
 
