@@ -1,5 +1,6 @@
 # topographer (dev 0.0.2.0)
 <!-- badges: start -->
+[![CRAN status](http://www.r-pkg.org/badges/version/topographer)](https://cran.r-project.org/package=topographer)
 
 <!-- badges: end -->
 topographer R package with utilities to support spatial data ingest, manipulation, and transformation.
