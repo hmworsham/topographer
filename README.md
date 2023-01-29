@@ -1,6 +1,6 @@
 # topographer (dev 0.0.2.0)
 <!-- badges: start -->
-[![R-CMD-check](https://github.com/hmworsham/topographer/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/hmworsham/topographer/actions/workflows/R-CMD-check.yaml)
+[![R-CMD-check](https://github.com/hmworsham/topographer/.github/workflows/r.yml/badge.svg)](https://github.com/hmworsham/topographer/.github/workflows/r.yml)
 [![CRAN status](http://www.r-pkg.org/badges/version/topographer)](https://cran.r-project.org/package=topographer)
 
 <!-- badges: end -->
