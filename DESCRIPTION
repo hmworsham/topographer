@@ -8,6 +8,7 @@ Description: topographer contains data manipulation functions and functions for 
 Depends: R (>= 4.0)
 Imports:
   terra,
+  raster,
   sf,
   topmodel
 License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
