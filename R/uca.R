@@ -1,9 +1,8 @@
-#' Upslope Contributing Area (UCA)
+#' Upslope contributing area
 #'
-#' @description calculates Upslope Contributing Area on a raster DEM
-#' @importFrom dynatopmodel build_layers
+#' @description calculates upslope contributing area per pixel on a raster DEM
 #' @param x A terra SpatRaster or raster RasterLayer object
-#' @param in.res Positive integer. Resolution for computing upslope area 
+#' @param calc.res Positive integer. Resolution for computing upslope area 
 #'  and localslope.  Single value asserts equal horz/vert length. 
 #'  Or two integers for different horz/vert lengths. 
 #' @param out.res Positive integer. Desired resolution of output raster. Single
@@ -13,19 +12,22 @@
 #'  calculating the upslope area and TWI.
 #' @param deg Threshold intercell slope to determine sinks
 #' @return A raster comprising topographic wetness index values
-#' @export
+#' @export twi
 #'
 #' @examples
 #' \dontrun{
-#' x <- rast()
-#' values(x) <- 1:ncell(x)
-#' y <- raster(x)
-#' x.twi <- twi(x, in.res=100, out.res=10, fill.sinks=T)
-#' y.twi <- twi(y, in.res=100, out.res=1000, fill.sinks=T)
-#' plot(x.twi)
+#' library(topographer)
+#' crb <- readRDS(file.path('.', 'data', 'crb.rds'))
+#' crb <- raster(crb)
+#' y <- raster(crb)
+#' values(y) <- values(crb)
+#' x.uca <- uca(crb, calc.res=100, out.res=10, fill.sinks=T)
+#' y.uca <- uca(y, calc.res=100, out.res=1000, fill.sinks=T)
+#' plot(x.uca)
+#' plot(y.uca)
 #' }
 
-twi <- function(x, in.res=100, out.res=10, fill.sinks=T, deg=0.1) {
+uca <- function(x, calc.res=100, out.res=10, fill.sinks=T, deg=0.1) {
   if (!(inherits(x, "SpatRaster") | inherits(x, "RasterLayer")))
     stop(deparse(substitute(x)), " must be a SpatRaster or RasterLayer object")
   rl = F
@@ -33,13 +35,13 @@ twi <- function(x, in.res=100, out.res=10, fill.sinks=T, deg=0.1) {
     x = rast(x)
     rl = T
   }
-  if (all(res(x) <rep(in.res,2))) {
-    x = change.res(x, targ.res=in.res, method='median')
-  } else if (all(res(x)>rep(in.res,2))) {
-    x = change.res(x, targ.res=in.res, method='bilinear')
+  if (all(res(x) <rep(calc.res,2))) {
+    x = change.res(x, targ.res=calc.res, method='median')
+  } else if (all(res(x)>rep(calc.res,2))) {
+    x = change.res(x, targ.res=calc.res, method='bilinear')
   }
-  topmod = dynatopmodel::build_layers(raster(x), fill.sinks = T, deg=0.1)
-  x = topmod[[2]]
+  topmod = upslope.area(raster(x), atb=T, fill.sinks = fill.sinks, deg=deg)
+  x = topmod[[1]]
   if (all(res(x)<rep(out.res,2))) {
     x = change.res(x, targ.res=out.res, method='median')
   } else if (all(res(x)>rep(out.res, 2))) {

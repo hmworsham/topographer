@@ -1,6 +1,6 @@
 Package: topographer
 Title: Data Manipulation and Calculations for Raster-Based Topographic Metrics
-Version: 0.0.2.1
+Version: 0.0.2.2
 Authors@R: 
     person("Marshall", "Worsham", , "worsham@berkeley.edu", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0001-7924-040X"))
@@ -9,7 +9,7 @@ Depends: R (>= 4.0)
 Imports:
   terra,
   sf,
-  dynatopmodel
+  topmodel
 License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
     license
 Maintainer: Marshall Worsham <worsham@berkeley.edu>

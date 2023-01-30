@@ -1,4 +1,4 @@
-# topographer (dev 0.0.2.0)
+# topographer (dev 0.0.2.2)
 <!-- badges: start -->
 [![CRAN status](http://www.r-pkg.org/badges/version/topographer)](https://cran.r-project.org/package=topographer)
 [![R-CMD-check](https://github.com/hmworsham/topographer/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/hmworsham/topographer/actions/workflows/R-CMD-check.yaml)
@@ -13,10 +13,7 @@
 	R implementation of `dynatopmodel`.
 
 ## Note
-`topographer` is in dev mode. Most of the functions aren'tAt this point I've developed it mostly for use in analyses
-	for my own research and within my own lab. Most of the functions are derived from other sources and R packages, just 
-	structured and/or integrated in a way that makes them easier for me to use. I haven't yet seen a case for publishing
-	the package to CRAN, but may do so in future. 
+`topographer` is in dev mode. At this point I've developed it mostly for use in analyses for my own research projects and those of a few collaborators. Most of the functions are derived from other sources and R packages, just structured and/or integrated in a way that makes them easier for me to use. I haven't yet seen a case for publishing the package to CRAN, but may do so in future. 
 
 ## Available functions in topographer 0.0.2.0
 
@@ -42,7 +39,7 @@ To install `topographer` dev version run:
 ## Dependencies
 - terra
 - spatialEco
-- dynatopmodel
+- topmodel
 
 ## Bugs
 Bugs: Users are encouraged to report bugs directly in GitHub. Select **Issues** in the menu above, and create a **New issue** to start a new bug report, documentation correction, or feature request. Questions to worsham@berkeley.edu.
