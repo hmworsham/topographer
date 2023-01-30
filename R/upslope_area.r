@@ -11,6 +11,7 @@
 #' @note This is a wrapper to the function implemented in the TOPMODEL package by Wouter Buytaert.
 #' @author Peter Metcalfe and Wouter Buytaert
 #' @references Quinn, P. FALSE., Beven, K. J., & Lamb, R. (1995). The In (a/tan/beta) index: How to calculate it and how to use it within the Topmodel framework. Hydrological processes, 9(2), 161-182.
+#' @export upslope.area
 #' @examples
 #'\dontrun{
 #' library(topographer)
