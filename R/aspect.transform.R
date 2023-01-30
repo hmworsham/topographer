@@ -18,31 +18,31 @@
 #'
 #' @examples
 #' \dontrun{
-#' s <- 23
-#' a <- 1:360
+#' crb <- readRDS(file.path('data', 'crb.rds'))
+#' s <- terra::terrain(crb, v='slope')
+#' a <- terra::terrain(crb, v='aspect')
 #' f <- 180
 #' u <- 'deg'
 #' e.facing <- eastness(s,a,u)
-#' adjs.facing <- adjsouthness(s,a,f,u)
+#' adjs.facing <- adjsouthness(slope=s,aspect=a,focal=f,unit=u)
 #' f.aspect <- fold.aspect(a, fold=215)
 #' s.aspect <- sin.aspect(a)
 #' c.aspect <- cos.aspect(a)
-#' plot(a, type='l')
-#' lines(a, e.facing, col='red')
-#' lines(a, f.aspect, col='blue')
-#' lines(a, s.aspect, col='orange')
-#' lines(a, c.aspect, col='purple')
+#' plot(a)
+#' plot(e.facing)
+#' plot(f.aspect)
 #' }
-
 
 # Which direction a slope is facing
 facing <- function(slope, aspect, focal=180, unit='rad') {
   if (unit %in% c('rad','deg')) {
+    deg = F
     if (unit=='deg') {
-      slope <- d2r(slope)
-      aspect <- d2r(aspect)
+      slope = d2r(slope)
+      aspect = d2r(aspect)
+      deg = T
     }
-    aspect <- d2r(focal) - aspect
+    aspect = d2r(focal) - aspect
     return(sin(slope) * cos(aspect))
   } else print('unit must be rad or deg')
 }
