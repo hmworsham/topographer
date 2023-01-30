@@ -25,8 +25,18 @@ transforms simple cardinal aspect values into ecologically meaningful values
 }
 \examples{
 \dontrun{
-d <- 25.5
-r <- d2r(d)
-d <- r2d(r)
+crb <- readRDS(file.path('data', 'crb.rds'))
+s <- terra::terrain(crb, v='slope')
+a <- terra::terrain(crb, v='aspect')
+f <- 180
+u <- 'deg'
+e.facing <- eastness(s,a,u)
+adjs.facing <- adjsouthness(slope=s,aspect=a,focal=f,unit=u)
+f.aspect <- fold.aspect(a, fold=215)
+s.aspect <- sin.aspect(a)
+c.aspect <- cos.aspect(a)
+plot(a)
+plot(e.facing)
+plot(f.aspect)
 }
 }
