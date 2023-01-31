@@ -1,6 +1,8 @@
 #' Topographic Wetness Index (TWI)
 #'
 #' @description calculates Topographic Wetness Index on a raster DEM
+#' @import raster
+#' @import terra
 #' @param x A terra SpatRaster or raster RasterLayer object
 #' @param calc.res Positive integer. Resolution for computing upslope area 
 #'  and localslope.  Single value asserts equal horz/vert length. 
@@ -18,7 +20,7 @@
 #' \dontrun{
 #' library(topographer)
 #' crb <- readRDS(file.path('.', 'data', 'crb.rds'))
-#' crb <- raster(crb)
+#' crb <- terra::unwrap(crb)
 #' y <- raster(crb)
 #' values(y) <- values(crb)
 #' x.twi <- twi(crb, calc.res=100, out.res=10, fill.sinks=T)
