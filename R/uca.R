@@ -12,7 +12,7 @@
 #'  calculating the upslope area and TWI.
 #' @param deg Threshold intercell slope to determine sinks
 #' @return A raster comprising topographic wetness index values
-#' @export twi
+#' @export uca
 #'
 #' @examples
 #' \dontrun{
