@@ -55,26 +55,28 @@
 #'
 #' @examples 
 #' \donttest{
-#'   library(terra)
-#'   elev <- rast(system.file("extdata/elev.tif", package="spatialEco"))
-#'
-#'   crv <- curvature(elev, type="planform")
-#'   mcnab.crv <- curvature(elev, type="mcnab")
-#'       plot(mcnab.crv, main="McNab's curvature") 
+#' library(topographer)
+#' crb <- readRDS(file.path('.', 'data', 'crb.rds'))
+#' crb <- terra::unwrap(crb)
+#' crv <- curvature(crb, type="planform")
+#' mcnab.crv <- curvature(crb, type="mcnab")
+#' terra::plot(mcnab.crv) 
 #' }
 #'
 #' @export
 
 curvature <- function(x, type=c("planform", "profile", "total", "mcnab", "bolstad")) {
-  if (!(inherits(x, "SpatRaster") | inherits(x, "RasterLayer")))
+  if (!(inherits(x, "SpatRaster") | inherits(x, "RasterLayer"))) {
     stop(deparse(substitute(x)), " must be a SpatRaster or RasterLayer object")
+  }
+  
   rl = F
   if (inherits(x, "RasterLayer")) {
     x = rast(x)
     rl = T
   }
   m <- matrix(1, nrow=3, ncol=3)
-  match.args(type)
+  match.arg(type)
   type = type[1] 
   zt.crv = function(m, method = type, res = terra::res(x)[1], ...) {
     p=(m[6]-m[4])/(2*res)
@@ -96,9 +98,9 @@ curvature <- function(x, type=c("planform", "profile", "total", "mcnab", "bolsta
   } else if(type == "mcnab") {
     # mcnab <- function(x, ...) (((x[5] - x) + (x[5] - x)) / 4)[5] 
     mcnab <- function(x, ...)  (( x[5] - x ) + x)[round((length(m)/2)/2,0)]
-    return( terra::focal(x, w=m, fun=mcnab, ...) ) 
+    return( terra::focal(x, w=m, fun=mcnab) ) 
   } else {  
     return( terra::focal(x, w=m, fun = function(x) { zt.crv(m=x, type = type) }, 
-                         fillvalue = 0, ...) )
+                         fillvalue = 0) )
   }
 }	
