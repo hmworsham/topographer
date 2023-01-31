@@ -32,7 +32,7 @@ calculates Topographic Wetness Index on a raster DEM
 \dontrun{
 library(topographer)
 crb <- readRDS(file.path('.', 'data', 'crb.rds'))
-crb <- raster(crb)
+crb <- terra::unwrap(crb)
 y <- raster(crb)
 values(y) <- values(crb)
 x.twi <- twi(crb, calc.res=100, out.res=10, fill.sinks=T)

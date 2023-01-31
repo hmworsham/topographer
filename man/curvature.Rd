@@ -42,12 +42,12 @@ by dividing by the radius distance to the outermost cell (36.2m).
 }
 \examples{
 \donttest{
-  library(terra)
-  elev <- rast(system.file("extdata/elev.tif", package="spatialEco"))
-
-  crv <- curvature(elev, type="planform")
-  mcnab.crv <- curvature(elev, type="mcnab")
-      plot(mcnab.crv, main="McNab's curvature") 
+library(topographer)
+crb <- readRDS(file.path('.', 'data', 'crb.rds'))
+crb <- terra::unwrap(crb)
+crv <- curvature(crb, type="planform")
+mcnab.crv <- curvature(crb, type="mcnab")
+terra::plot(mcnab.crv) 
 }
 
 }
