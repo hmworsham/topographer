@@ -11,8 +11,7 @@ Imports:
   raster,
   sf,
   topmodel
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+License: MIT + file LICENSE
 Maintainer: Marshall Worsham <worsham@berkeley.edu>
 URL: https://github.com/hmworsham/topographer, https://hmworsham.github.io/topographer/
 BugReports: https://github.com/hmworsham/topographer/issues
