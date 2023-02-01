@@ -6,11 +6,10 @@
 <!-- badges: end -->
 **topographer** R package with utilities to support spatial data ingest, manipulation, and transformation.
 	Designed to operate on scalars, vectors, dataframes, `terra:SpatRaster`, and outmoded `raster:RasterLayer` objects.
-	Functions include resolution transformations and calculations for topographic parameters including curvature,
-	multiple aspect transforms, heat load, topographic position index, topographic wetness index, upslope 
+	Functions include resolution transformations and calculations for a handful of topographic parameters: curvature,
+	various transformed aspects, heat load, topographic position index, topographic wetness index, upslope 
 	contributing area. Also includes functions to retrieve zonal statistics from rasters using `sf` objects or 
-	point coordinates. Integrates and adapts some functions from Jeffrey Evans's R package `spatialEco` and Paul Smith's
-	R implementation of `dynatopmodel`.
+	point coordinates. Integrates and adapts some functions from Jeffrey Evans's R package `spatialEco` and Paul Smith's implementation of `topmodel`.
 
 ## Note
 `topographer` is in dev mode. At this point I've developed it mostly for use in analyses for my own research projects and those of a few collaborators. Most of the functions are derived from other sources and R packages, just structured and/or integrated in a way that makes them easier for me to use. I haven't yet seen a case for publishing the package to CRAN, but may do so in future. 
@@ -38,7 +37,7 @@ To install `topographer` dev version run:
 
 ## Dependencies
 - terra
-- spatialEco
+- raster
 - topmodel
 
 ## Bugs
