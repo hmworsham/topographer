@@ -1,7 +1,6 @@
 # topographer (dev 0.0.2.2)
 <!-- badges: start -->
 [![CRAN status](http://www.r-pkg.org/badges/version/topographer)](https://cran.r-project.org/package=topographer)
-[![R-CMD-check](https://github.com/hmworsham/topographer/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/hmworsham/topographer/actions/workflows/R-CMD-check.yaml)
 
 <!-- badges: end -->
 **topographer** R package with utilities to support spatial data ingest, manipulation, and transformation.
