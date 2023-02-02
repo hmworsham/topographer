@@ -1,4 +1,4 @@
-# topographer (dev 0.0.2.2)
+# topographer (dev 0.0.3.0)
 <!-- badges: start -->
 [![CRAN status](http://www.r-pkg.org/badges/version/topographer)](https://cran.r-project.org/package=topographer)
 
@@ -37,8 +37,10 @@ To install `topographer` dev version run:
 `remotes::install_github(hmworsham/topographer)`
 
 ## Dependencies
+- R >= 4.0
 - terra
 - raster
+- sf
 - topmodel
 
 ## Bugs
