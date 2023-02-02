@@ -4,33 +4,36 @@
 \alias{thl}
 \title{Heat load}
 \usage{
-thl(L, A, S, unit = "deg", fold = 180)
+thl(L, A, S, unit = c("deg", "rad"), fold = 180, equation = c(1, 2, 3))
 }
 \arguments{
-\item{L}{float value for latitude of site}
+\item{L}{Float value for latitude of site}
 
-\item{A}{vector, dataframe, or raster of aspect values}
+\item{A}{Vector, dataframe, or raster of aspect values in degrees or radians}
 
-\item{S}{vector, dataframe or raster of slope values}
+\item{S}{Vector, dataframe or raster of slope values in degrees or radians}
 
-\item{unit}{units that aspect are in, either degrees or radians}
+\item{unit}{Character vector. Units that aspect are in, either degrees or radians}
 
-\item{fold}{angle along which aspect should be folded}
+\item{fold}{Numeric. Angle along which aspect should be folded}
+
+\item{equation}{Integer vector. The equation number from McCune and Keon 2002. Default is 3.
+There three equations have slightly different uses. \emph{Eq.1} is broadest in application,
+covering slopes <=90º at latitudes 0-60º N, but has the lowest R^2 when compared with
+instrumental radiation observations. \emph{Eq. 2.} has higher agreement but excludes slopes >60º.
+\emph{Eq. 3} holds between latitudes of ±30-60º and slope angles <= 60º and has highest R^2.}
 }
 \value{
 total heat load value
 }
 \description{
-calculates heat load from input slope and aspect values
+Calculates heat load from input slope and aspect values
 }
 \note{
 Heat load is a unitless index of heat load, rather than a direct estimate of
-incident radiation. The approach implements Equation 3 from McCune and Keon (2002),
-using inputs of latitude. The equation holds between latitudes of ±30-60º and
-slope angles <= 60º. Their 3rd equation is valid for the narrowest input ranges
-but has the highest R^2 and is suitable for many settings. I may implement
-equations 1 and 2 in the future. NOTE: the estimates are somewhat rudimentary
-and do not take into account cloud cover, regional differences in the atmospheric
+incident radiation. Their 3rd equation is valid for the narrowest input ranges
+but has the highest R^2 and is suitable for many settings. The estimates are somewhat
+rudimentary and do not take into account cloud cover, regional differences in the atmospheric
 coefficient, or shading by adjacent topography.
 }
 \examples{
