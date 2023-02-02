@@ -7,13 +7,13 @@
 facing(slope, aspect, focal = 180, unit = "rad")
 }
 \arguments{
-\item{slope}{vector, dataframe or raster of slope values}
+\item{slope}{A vector, dataframe or raster of slope values}
 
-\item{aspect}{vector, dataframe, or raster of aspect values}
+\item{aspect}{A vector, dataframe, or raster of aspect values}
 
-\item{focal}{focal angle for facingness}
+\item{focal}{Integer. A focal angle for transforming aspect into a 'facing' value}
 
-\item{unit}{units that aspect are in, either degrees or radians}
+\item{unit}{Character. Units that aspect are in natively, either degrees or radians}
 
 \item{fold}{angle along which aspect should be folded}
 }
@@ -21,7 +21,7 @@ facing(slope, aspect, focal = 180, unit = "rad")
 transformed aspect values
 }
 \description{
-transforms simple cardinal aspect values into ecologically meaningful values
+Transforms simple cardinal aspect values into ecologically meaningful values
 }
 \examples{
 \dontrun{

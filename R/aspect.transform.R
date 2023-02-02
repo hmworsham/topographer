@@ -1,10 +1,10 @@
 #' Transform aspect
 #'
-#' @description transforms simple cardinal aspect values into ecologically meaningful values
-#' @param slope vector, dataframe or raster of slope values
-#' @param aspect vector, dataframe, or raster of aspect values
-#' @param focal focal angle for facingness
-#' @param unit units that aspect are in, either degrees or radians
+#' @description Transforms simple cardinal aspect values into ecologically meaningful values
+#' @param slope A vector, dataframe or raster of slope values
+#' @param aspect A vector, dataframe, or raster of aspect values
+#' @param focal Integer. A focal angle for transforming aspect into a 'facing' value
+#' @param unit Character. Units that aspect are in natively, either degrees or radians
 #' @param fold angle along which aspect should be folded
 #' @return transformed aspect values
 #' @export facing
@@ -54,18 +54,33 @@ southness <- function(slope, aspect, unit='deg') facing(slope,aspect,focal=180,u
 adjsouthness <- function(slope, aspect, focal, unit='deg') facing(slope,aspect,focal,unit=unit)
 
 # Folded aspect
-fold.aspect <- function(x, fold=180) abs(180-abs(x-f))
+fold.aspect <- function(x, fold=180) abs(180-abs(x-fold))
 
 # Cosine transform aspect
-cos.aspect <- function(x) {
-  cos.asp <- cos(x)
-  names(cos.asp) <- 'usgs_cosaspect_100m'
-  return(cos.asp)
+cos.aspect <- function(x, unit=c('rad','deg')) {
+  if (unit %in% c('rad','deg')) {
+    deg = F
+    if (unit=='deg') {
+      x = d2r(x)
+      deg = T
+    }
+    cos.asp <- cos(x)
+    names(cos.asp) <- 'usgs_cosaspect_100m'
+    if (deg) {return(r2d(cos.asp))
+      } else {return(cos.asp)}
+  } else print('unit must be rad or deg')
 }
 
 # Sine transform aspect
-sin.aspect <- function(x) {
+sin.aspect <- function(x, unit=c('rad', 'deg')) {
+  match.arg(unit)
+  deg=F
+  if(unit=='deg') {
+    x = d2r(x)
+    deg = T
+  }
   sin.asp <- sin(x)
   names(sin.asp) <- 'usgs_cosaspect_100m'
-  return(sin.asp)
+  if (deg) {return(r2d(sin.asp))
+  } else {return(sin.asp)}
 }
