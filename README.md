@@ -13,13 +13,16 @@
 ## Note
 `topographer` is in dev mode. At this point I've developed it mostly for use in analyses for my own research projects and those of a few collaborators. Most of the functions are derived from other sources and R packages, just structured and/or integrated in a way that makes them easier for me to use. I haven't yet seen a case for publishing the package to CRAN, but may do so in future. 
 
-## Available functions in topographer 0.0.2.0
+## Available functions in topographer 0.0.3.0
 
 | `topographer` Function       | Description                                                                             |
 |:-----------------------------|:----------------------------------------------------------------------------------------|
-| `aspect.transform`           | Transforms simple cardinal aspect values to ecologically meaningful values  |
 | `change.res`                 | Changes raster resolution via aggregation or disaggregation  |
 | `curvature`                  | Calculate surface curvature |
+| `fold.aspect`                | Transforms simple cardinal aspect values into values folded along a selected axis  |
+| `cosaspect`                 | Transforms simple cardinal aspect values into their cosines  |
+| `sinaspect`                 | Transforms simple cardinal aspect values into their sines  |
+| `facing`                     | Transforms simple cardinal aspect values into values relative to a focal direction  |
 | `d2r`                        | Convert degrees to radians  |
 | `r2d`                        | Convert radians to degrees  |
 | `get.rasters`                | Ingest tif files as terra::SpatRaster objects and store in list  |
@@ -28,7 +31,6 @@
 | `twi`                        | Calculate topographic wetness index (TWI) on a specified resolution  | 
 | `uca`                        | Calculate upslope contributing area  | 
 | `zonals`                     | Retrieve zonal statistics for a shapefile or coordinate input  | 
-
 
 ## Installation
 To install `topographer` dev version run:
