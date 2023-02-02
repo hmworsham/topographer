@@ -38,12 +38,22 @@ coefficient, or shading by adjacent topography.
 }
 \examples{
 \dontrun{
+# Vector example
 l <- 38.58
 a <- 0:360
 s <- 12.6
 heatload <- thl(l, a, s, 'deg', 180)
-plot(A,thl(L,A,S,fold=225))
-points(A,thl(L,A,S,fold=225))
+plot(a, thl(l, a, s, fold=180, equation=2))
+points(a,thl(l, a, s, fold=225, equation=1))
+
+# Raster example
+#' library(terra)
+crb <- readRDS(system.file(file.path('data', 'crb.rds'), package='topographer'))
+l <- 38.58
+a <- terra::terrain(crb, v='aspect')
+s <- terra::terrain(crb, v='slope')
+heatload <- thl(l, a, s, 'deg', fold=205, equation=3)
+plot(heatload)
 }
 }
 \references{
