@@ -1,5 +1,5 @@
 #' Cosine-transform aspect
-#' 
+#'
 #' @description Transforms simple cardinal aspect values into their cosines
 #' @param x A vector, dataframe, or raster of aspect values
 #' @param unit Character. Units that aspect are in natively, either degrees or radians
@@ -11,12 +11,12 @@
 #' crb <- readRDS(system.file(file.path('data', 'crb.rds'), package='topographer'))
 #' a <- terra::terrain(crb, v='aspect')
 #' u <- 'deg'
-#' c.aspect <- cos.aspect(a, u)
+#' c.aspect <- cosaspect(a, u)
 #' plot(c.aspect)
 #' }
 
 # Cosine transform aspect
-cos.aspect <- function(x, unit=c('rad','deg')) {
+cosaspect <- function(x, unit=c('rad','deg')) {
   if (unit %in% c('rad','deg')) {
     deg = F
     if (unit=='deg') {
