@@ -1,4 +1,4 @@
-# topographer (dev 0.0.3.0)
+# topographer (dev 0.0.3.1)
 <!-- badges: start -->
 [![CRAN status](http://www.r-pkg.org/badges/version/topographer)](https://cran.r-project.org/package=topographer)
 
@@ -13,7 +13,7 @@
 ## Note
 `topographer` is in dev mode. At this point I've developed it mostly for use in analyses for my own research projects and those of a few collaborators. Most of the functions are derived from other sources and R packages, just structured and/or integrated in a way that makes them easier for me to use. I haven't yet seen a case for publishing the package to CRAN, but may do so in future. 
 
-## Available functions in topographer 0.0.3.0
+## Available functions in topographer 0.0.3.1
 
 | `topographer` Function       | Description                                                                             |
 |:-----------------------------|:----------------------------------------------------------------------------------------|
@@ -37,7 +37,7 @@ To install `topographer` dev version run:
 `remotes::install_github(hmworsham/topographer)`
 
 ## Dependencies
-- R >= 4.0
+- R >= 3.0
 - terra
 - raster
 - sf
