@@ -2,13 +2,13 @@
 #'
 #' @description calculates upslope contributing area per pixel on a raster DEM
 #' @param x A terra SpatRaster or raster RasterLayer object
-#' @param calc.res Positive integer. Resolution for computing upslope area 
-#'  and localslope.  Single value asserts equal horz/vert length. 
-#'  Or two integers for different horz/vert lengths. 
+#' @param calc.res Positive integer. Resolution for computing upslope area
+#'  and localslope.  Single value asserts equal horz/vert length.
+#'  Or two integers for different horz/vert lengths.
 #' @param out.res Positive integer. Desired resolution of output raster. Single
 #' value asserts equal horz/vert length. Or two integers for
-#' different horz/vert lengths. 
-#' @param fill_sinks Logical. If TRUE (default) then run a sinkfill before 
+#' different horz/vert lengths.
+#' @param fill.sinks Logical. If TRUE (default) then run a sinkfill before
 #'  calculating the upslope area and TWI.
 #' @param deg Threshold intercell slope to determine sinks
 #' @return A raster comprising topographic wetness index values
@@ -48,8 +48,8 @@ uca <- function(x, calc.res=100, out.res=10, fill.sinks=T, deg=0.1) {
   } else if (all(res(x)>rep(out.res, 2))) {
     x = change.res(x, targ.res=out.res, method='bilinear')
   }
-  
+
   if (!rl) x = rast(x)
-  
+
   return(x)
 }
