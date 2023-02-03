@@ -1,5 +1,6 @@
-#' Convert degrees to radians or radians to degrees
-#'
+#' Convert degrees to radians and radians to degrees
+
+#' @title Convert degrees to radians
 #' @description calculates zonal statistics for raster inputs given an input shapefile or coordinates
 #' @param a a float angle in degrees or radians
 #' @return the angle converted into degrees or radians
@@ -12,9 +13,9 @@
 #' d <- r2d(r)
 #' }
 
-# Degrees to radians
 d2r <- function(a) a * pi / 180
 
+#' @title Convert radians to degrees
 #' @description calculates zonal statistics for raster inputs given an input shapefile or coordinates
 #' @param a a float angle in degrees or radians
 #' @return the angle converted into degrees or radians
@@ -26,5 +27,4 @@ d2r <- function(a) a * pi / 180
 #' d <- r2d(r)
 #' }
 
-# Radians to degrees
 r2d <- function(a) a * 180 / pi
