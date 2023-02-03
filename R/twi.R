@@ -19,8 +19,7 @@
 #' @examples
 #' \dontrun{
 #' library(topographer)
-#' crb <- readRDS(file.path('.', 'data', 'crb.rds'))
-#' crb <- terra::unwrap(crb)
+#' crb <- readRDS(system.file(file.path('data', 'crb.rds'), package='topographer'))
 #' y <- raster(crb)
 #' values(y) <- values(crb)
 #' x.twi <- twi(crb, calc.res=100, out.res=10, fill.sinks=T)

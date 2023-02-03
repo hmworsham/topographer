@@ -3,6 +3,7 @@
 #' @description Determine upslope contributing area based on an elevation raster and, optionally, compute the topographic wetness index.
 #' @import raster
 #' @import topmodel
+#' @importFrom utils capture.output
 #' @param dem raster  Elevation raster (in m), using a  projected coordinate system with identical x and y resolutions.
 #' @param log Boolean  Return the natural log of the values.
 #' @param atb Boolean  If TRUE, include both the upslope contributing area and the topographic wetness index \eqn{ln(a/tan(beta))}. Otherwise calculate just the upslope area.
@@ -15,7 +16,7 @@
 #' @examples
 #'\dontrun{
 #' library(topographer)
-#' crb <- readRDS(file.path('data', 'crb.rds'))
+#' crb <- readRDS(system.file(file.path('data', 'crb.rds'), package='topographer'))
 #' crb <- raster(crb)
 #' a.atb <- upslope.area(crb, atb=TRUE)
 #' sp::plot(a.atb, main=c("Upslope area (log(m^2/m))", "TWI log(m^2/m)"))

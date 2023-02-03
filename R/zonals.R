@@ -1,13 +1,15 @@
 #' Source rasters from local data directory
 #'
-#' @description calculates zonal statistics for raster inputs given an input shapefile or coordinates
+#' @description calculates zonal statistics for raster inputs given an input shapefile or
+#'   coordinates
 #' @import sf
 #' @importFrom terra rast
 #' @importFrom terra extract
 #' @param input a shapefile or dataframe of coordinates
 #' @param ras.source a file path to raster source directory
 #' @param topo.inputs a vector of strings describing raster data of interest
-#' @param type if 'coord' will calculate for a coordinate and specified buffer radius; if 'sf' will calculate for shapefile
+#' @param type if 'coord' will calculate for a coordinate and specified buffer radius; if
+#' 'sf' will calculate for shapefile
 #' @param radius radius of buffer for 'coord' inputs
 #' @param shape shape of buffer, defaults to rectangle
 #' @return a list of SpatRaster objects for serial processing
