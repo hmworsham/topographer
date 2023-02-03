@@ -15,7 +15,7 @@ facing(slope, aspect, focal = 180, unit = "rad")
 
 \item{unit}{Character. Units that aspect are in natively, either degrees or radians}
 
-\item{fold}{angle along which aspect should be folded}
+\item{fold}{Numeric. Angle along which aspect should be folded}
 }
 \value{
 A vector, dataframe, or raster of facing-transformed aspect values

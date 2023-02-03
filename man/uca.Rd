@@ -17,10 +17,10 @@ Or two integers for different horz/vert lengths.}
 value asserts equal horz/vert length. Or two integers for
 different horz/vert lengths.}
 
-\item{deg}{Threshold intercell slope to determine sinks}
-
-\item{fill_sinks}{Logical. If TRUE (default) then run a sinkfill before
+\item{fill.sinks}{Logical. If TRUE (default) then run a sinkfill before
 calculating the upslope area and TWI.}
+
+\item{deg}{Threshold intercell slope to determine sinks}
 }
 \value{
 A raster comprising topographic wetness index values

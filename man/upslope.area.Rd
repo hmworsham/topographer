@@ -26,7 +26,7 @@ This is a wrapper to the function implemented in the TOPMODEL package by Wouter 
 \examples{
 \dontrun{
 library(topographer)
-crb <- readRDS(file.path('data', 'crb.rds'))
+crb <- readRDS(system.file(file.path('data', 'crb.rds'), package='topographer'))
 crb <- raster(crb)
 a.atb <- upslope.area(crb, atb=TRUE)
 sp::plot(a.atb, main=c("Upslope area (log(m^2/m))", "TWI log(m^2/m)"))

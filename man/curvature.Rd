@@ -42,12 +42,11 @@ by dividing by the radius distance to the outermost cell (36.2m).
 }
 \examples{
 \donttest{
-library(topographer)
-crb <- readRDS(file.path('.', 'data', 'crb.rds'))
-crb <- terra::unwrap(crb)
+library(terra)
+crb <- readRDS(system.file(file.path('data', 'crb.rds'), package='topographer'))
 crv <- curvature(crb, type="planform")
 mcnab.crv <- curvature(crb, type="mcnab")
-terra::plot(mcnab.crv) 
+plot(mcnab.crv)
 }
 
 }

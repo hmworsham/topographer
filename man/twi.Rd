@@ -17,10 +17,10 @@ Or two integers for different horz/vert lengths.}
 value asserts equal horz/vert length. Or two integers for
 different horz/vert lengths.}
 
-\item{deg}{Threshold intercell slope to determine sinks}
-
-\item{fill_sinks}{Logical. If TRUE (default) then run a sinkfill before
+\item{fill.sinks}{Logical. If TRUE (default) then run a sinkfill before
 calculating the upslope area and TWI.}
+
+\item{deg}{Threshold intercell slope to determine sinks}
 }
 \value{
 A raster comprising topographic wetness index values
@@ -31,8 +31,7 @@ calculates Topographic Wetness Index on a raster DEM
 \examples{
 \dontrun{
 library(topographer)
-crb <- readRDS(file.path('.', 'data', 'crb.rds'))
-crb <- terra::unwrap(crb)
+crb <- readRDS(system.file(file.path('data', 'crb.rds'), package='topographer'))
 y <- raster(crb)
 values(y) <- values(crb)
 x.twi <- twi(crb, calc.res=100, out.res=10, fill.sinks=T)

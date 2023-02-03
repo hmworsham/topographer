@@ -20,7 +20,8 @@ zonals(
 
 \item{topo.inputs}{a vector of strings describing raster data of interest}
 
-\item{type}{if 'coord' will calculate for a coordinate and specified buffer radius; if 'sf' will calculate for shapefile}
+\item{type}{if 'coord' will calculate for a coordinate and specified buffer radius; if
+'sf' will calculate for shapefile}
 
 \item{radius}{radius of buffer for 'coord' inputs}
 
@@ -30,7 +31,8 @@ zonals(
 a list of SpatRaster objects for serial processing
 }
 \description{
-calculates zonal statistics for raster inputs given an input shapefile or coordinates
+calculates zonal statistics for raster inputs given an input shapefile or
+coordinates
 }
 \examples{
 \dontrun{
