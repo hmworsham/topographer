@@ -1,6 +1,6 @@
 Package: topographer
 Title: Data Manipulation and Calculations for Raster-Based Topographic Metrics
-Version: 0.0.3.0
+Version: 0.0.3.1
 Authors@R: 
     person("Marshall", "Worsham", , "worsham@berkeley.edu", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0001-7924-040X"))
