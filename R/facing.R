@@ -5,7 +5,6 @@
 #' @param aspect A vector, dataframe, or raster of aspect values
 #' @param focal Integer. A focal angle for transforming aspect into a 'facing' value
 #' @param unit Character. Units that aspect are in natively, either degrees or radians
-#' @param fold Numeric. Angle along which aspect should be folded
 #' @return A vector, dataframe, or raster of facing-transformed aspect values
 #' @export
 #' @examples
