@@ -29,7 +29,6 @@ zonals <- function(zones, rasters, type=c('coord', 'sf'), radius, shape='rectang
 
     # Create polygons with polys
     ID = zones[,1]
-    print(ID)
     sites = st_buffer(sites, dist=radius, endCapStyle = 'SQUARE', joinStyle = 'MITRE')
     sites = vect(sites)
     site_names = ID
