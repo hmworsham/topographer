@@ -4,28 +4,21 @@
 \alias{zonals}
 \title{Source rasters from local data directory}
 \usage{
-zonals(
-  input,
-  ras.source,
-  topo.inputs,
-  type = c("coord", "sf"),
-  radius,
-  shape = "rectangle"
-)
+zonals(zones, rasters, type = c("coord", "sf"), radius, shape = "rectangle")
 }
 \arguments{
-\item{input}{a shapefile or dataframe of coordinates}
-
-\item{ras.source}{a file path to raster source directory}
-
-\item{topo.inputs}{a vector of strings describing raster data of interest}
-
 \item{type}{if 'coord' will calculate for a coordinate and specified buffer radius; if
 'sf' will calculate for shapefile}
 
 \item{radius}{radius of buffer for 'coord' inputs}
 
 \item{shape}{shape of buffer, defaults to rectangle}
+
+\item{input}{a shapefile or dataframe of coordinates}
+
+\item{ras.source}{a file path to raster source directory}
+
+\item{topo.inputs}{a vector of strings describing raster data of interest}
 }
 \value{
 a list of SpatRaster objects for serial processing

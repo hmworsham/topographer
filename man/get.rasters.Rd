@@ -2,21 +2,21 @@
 % Please edit documentation in R/get.rasters.R
 \name{get.rasters}
 \alias{get.rasters}
-\title{Source rasters from local data directory}
+\title{Ingest rasters from data directory}
 \usage{
-get.rasters(x, dir)
+get.rasters(x, path)
 }
 \arguments{
-\item{x}{a string containing a search pattern for a subdirectory name indicating the
-raster data of interest}
+\item{x}{Character vector. Search pattern for the raster data of interest}
 
-\item{dir}{a string containing a directory path where rasters are stored}
+\item{path}{Character vector. Directory path where rasters are stored}
 }
 \value{
 a list of SpatRaster objects for serial processing
 }
 \description{
-Sources rasters from a local directory using terra::rast and stores in a list of SpatRaster objects.
+Sources rasters from a local directory using terra::rast and
+stores in a list of SpatRaster objects.
 }
 \examples{
 \dontrun{
